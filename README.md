@@ -10,7 +10,11 @@ You can click the Preview link to take a look at your changes.
 --->
 
 
+The Sh interface is defined by 3GPP in TS 29.329 as a diameter interface between an AS and HSS.
 
+Subscription/notification procedures
+– An AS can subscribe to receive notifications from the HSS of changes in data.
+– The HSS can notify an AS of changes in data for which the AS previously had subscribed.
 
 Application Layer Messages over Sh Interface
 
@@ -23,8 +27,9 @@ Subscribe-Notifications-Answer (SNA) Command
 The Subscribe-Notifications-Answer command, indicated by the Command-Code field set to 308 and the ‘R’ bit cleared
 in the Command Flags field, is sent by home subscriber server (HSS) in response to the Subscribe-Notifications-Request command. 
 
-
 Push-Notification-Request (PNR) Command
-The Push-Notification-Request (PNR) command, indicated by the Command-Code field set to 309 and the ‘R’ bit set in
-the Command Flags field, is sent by a Diameter server to a Diameter client in order to notify changes in the user data in
-the server. 
+The PNR command, indicated by the Command-Code field set to 309 and the ‘R’ bit set in the Command Flags field, is sent by HSS to the AS in order to notify changes in the subscribed user data. 
+
+Push-Notifications-Answer (PNA) Command
+The PNA command, indicated by the Command-Code field set to 309 and the ‘R’ bit
+cleared in the Command Flags field, is sent by the AS in response to the PNR command from HSS.
